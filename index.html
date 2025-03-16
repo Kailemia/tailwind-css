@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/d556994849.js" crossorigin="anonymous"></script>
+    <style>
+        .card:hover .content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
+
 <body class="flex flex-col min-h-screen text-gray-900">
     <!-- navbar -->
      <nav class="fixed top-0 w-full bg-gray-900 text-white flex justify-between items-center px-8 py-4 z-50">
@@ -38,28 +45,126 @@
         </section>
     
         <!-- Services Section -->
-        <section>
-            <h2 class="text-3xl font-bold text-gray-800 text-center mb-6">Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Card 1 -->
-                <div class="bg-white shadow-lg rounded-xl p-6 border border-gray-200 hover:shadow-2xl hover:scale-105 transition-transform duration-300 ease-in-out">
-                    <h3 class="text-xl font-semibold text-gray-800">Ocean and Inland Shipping</h3>
-                    <p class="text-gray-600 mt-2">Transporting goods worldwide using container vessels.</p>
+        <section id="services" class="p-8">
+            <h2 class="text-2xl font-bold mb-10 text-center">Our Services</h2>
+            <div class="grid grid-cols-8 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="card relative bg-white shadow-lg rounded-lg overflow-hidden">
+                    <div class="image-slot">
+                        <img src="assets/pexels-albinberlin-906982.jpg" alt="Web Development">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-center">Ocean And Inland Shipping</h3>
+                    </div>
+                    <div class="content absolute inset-0 bg-black bg-opacity-75 text-white opacity-0 flex items-center justify-center transition-opacity duration-300">
+                        <p class="text-center">Transporting goods worldwide using container vessels.</p>
+                    </div>
                 </div>
-                <!-- Card 2 -->
-                <div class="bg-white shadow-lg rounded-xl p-6 border border-gray-200 hover:shadow-2xl hover:scale-105 transition-transform duration-300 ease-in-out">
-                    <h3 class="text-xl font-semibold text-gray-800">Logistics Solutions</h3>
-                    <p class="text-gray-600 mt-2">Combining sea, rail, and road transport for efficiency.</p>
+                <div class="card relative bg-white shadow-lg rounded-lg overflow-hidden">
+                    <div class="image-slot">
+                        <img src="assets/pexels-tiger-lily-4483610.jpg" alt="Graphic Design">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-center">Logistics Solutions</h3>
+                    </div>
+                    <div class="content absolute inset-0 bg-black bg-opacity-75 text-white opacity-0 flex items-center justify-center transition-opacity duration-300 text-center">
+                        <p>Combining sea, rail, and road transport for efficiency.</p>
+                    </div>
                 </div>
-                <!-- Card 3 -->
-                <div class="bg-white shadow-lg rounded-xl p-6 border border-gray-200 hover:shadow-2xl hover:scale-105 transition-transform duration-300 ease-in-out">
-                    <h3 class="text-xl font-semibold text-gray-800">Air Freight and Customs</h3>
-                    <p class="text-gray-600 mt-2">Fast global shipping via Maersk Air Cargo.</p>
+                <div class="card relative bg-white shadow-lg rounded-lg overflow-hidden">
+                    <div class="image-slot">
+                        <img src="assets/pexels-tomfisk-3057963.jpg" alt="Digital Marketing">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-center">Air Freight and Customs</h3>
+                    </div>
+                    <div class="content absolute inset-0 bg-black bg-opacity-75 text-white opacity-0 flex items-center justify-center transition-opacity duration-300">
+                        <p class="text-center">Fast global shipping via Maersk Air Cargo.</p>
+                    </div>
                 </div>
             </div>
         </section>
+        <section id="contact" class="p-8 bg-gray-100 flex justify-center">
+            <div class="max-w-lg w-full bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold mb-6 text-center">Contact Us</h2>
+                <form action="submit.php" method="post" class="grid gap-4">
+                    
+                    <div>
+                        <label for="name" class="block font-medium mb-1">Enter your name</label>
+                        <input type="text" id="name" name="name" placeholder="Name" class="w-full p-3 rounded-lg border border-gray-300" required>
+                    </div>
+        
+                    <div>
+                        <label for="email" class="block font-medium mb-1">Enter your email</label>
+                        <input type="email" id="email" name="email" placeholder="Email" class="w-full p-3 rounded-lg border border-gray-300" required>
+                    </div>
+        
+                    <div>
+                        <label for="subject" class="block font-medium mb-1">Enter subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Subject" class="w-full p-3 rounded-lg border border-gray-300" required>
+                    </div>
+        
+                    <div>
+                        <label for="message" class="block font-medium mb-1">Enter your message</label>
+                        <textarea id="message" name="message" placeholder="Message" class="w-full p-3 rounded-lg border border-gray-300"></textarea>
+                    </div>
+        
+                    <button type="submit" class="bg-red-500 text-white px-6 py-3 rounded-lg hover:bg-red-600 transition">
+                        Submit
+                    </button>
+                    
+                </form>
+            </div>
+        </section>
+        
     </main>
+    <!-- footer section -->
+     <footer class="bg-gray-900 text-white text-center py-8">
+        <div class="max-w-6xl mx-auto grid grid-col-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            <!-- about section -->
+             <div>
+                <h3 class="text-lg font-semibold mb-2">About</h3>
+                <p class="grey-400">We are dedicated to providing top notch web services</p>
+             </div>
     
-     
-</body>
-</html>
+             <!-- Quick links -->
+              <div>
+                <h3 class="text-lg font-semibold mb-2">Quick Links</h3>
+                <ul class space-y-2>
+                    <li><a href="#hero" class="text-gray-400 hover:text-white transition">Home</a></li>
+                    <li><a href="#about" class="text-gray-400 hover:text-white transition">About</a></li>
+                    <li><a href="#services" class="text-gray-400 hover:text-white transition">Services</a></li>
+                    <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                </ul>
+              </div>
+              <!-- Contact Section -->
+               <div>
+                <h3 class="text-lg font-semibold mb-2">Contact</h3>
+                <p class="grey-400">Email: kailemiakevin@gmail.com</p>
+                <p class="grey-400">Phone: +254 790937780</p>
+               </div>
+               <div class="flex flex-col items-center">
+                <h3 class="text-lg font-semibold mb-2">Follow Us</h3>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-2xl cursor-pointer hover:text-red-500 transition">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="#" class="text-2xl hover:text-red-500 transition">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="#" class="text-2xl hover:text-red-500 transition">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-2xl hover:text-red-500 transition">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+            
+               </div>
+    
+        </div>
+     </footer>
+    
+    </body>
+    </html>
+    
